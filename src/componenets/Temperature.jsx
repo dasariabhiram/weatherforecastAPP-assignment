@@ -4,12 +4,13 @@ function Temperature({ setCity, stats }) {
   const handleCityChange = (e) => {
     setCity(e.target.value);
   };
+
   return (
-    <>
-      <div className="flex align-middle justify-center">
+    <div className="bg-gray-800 text-white rounded-md p-8 m-8 max-w-lg mx-auto shadow-lg">
+      <div className="flex items-center justify-between mb-6">
         <input
           type="text"
-          className="bg-slate-600 border border-slate-500 text-slate-200 placeholder-slate-400 text-md focus:border-slate-400 block w-60 p-2 focus:outline-none"
+          className="bg-gray-700 border border-gray-600 text-gray-200 placeholder-gray-400 text-md focus:border-gray-400 block w-60 p-2 focus:outline-none"
           placeholder="Enter Your City Name"
           onChange={handleCityChange}
           defaultValue="New Delhi"
@@ -37,7 +38,7 @@ function Temperature({ setCity, stats }) {
         </div>
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-6">
         {stats.isDay !== 0 ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +46,7 @@ function Temperature({ setCity, stats }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-14 h-14 text-yellow-300 mt-8"
+            className="w-14 h-14 text-yellow-300 mt-8 transform transition-transform hover:scale-110 duration-300 ease-in-out"
           >
             <path
               strokeLinecap="round"
@@ -60,7 +61,7 @@ function Temperature({ setCity, stats }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-12 h-12 text-slate-200 mt-8"
+            className="w-12 h-12 text-gray-200 mt-8 transform transition-transform hover:scale-110 duration-300 ease-in-out"
           >
             <path
               strokeLinecap="round"
@@ -71,21 +72,21 @@ function Temperature({ setCity, stats }) {
         )}
       </div>
 
-      <div className="flex justify-center items-center text-slate-200 mt-8">
+      <div className="flex justify-center items-center text-gray-200 mb-6">
         <p className="font-semibold text-[55px] ">
           {stats.temp}
           <span className="text-[33px]">°C</span>
         </p>
       </div>
 
-      <div className="flex justify-center text-slate-300 mt-8 text-[25px] ">
+      <div className="flex justify-center text-gray-300 mb-2 text-[25px] ">
         {stats.condition}
       </div>
 
-      <div className="flex justify-center text-slate-400 mt-5 text-[15px]">
+      <div className="flex justify-center text-gray-400 text-[15px]">
         Today &#183; {stats.time} | {stats.location}
       </div>
-    </>
+    </div>
   );
 }
 
